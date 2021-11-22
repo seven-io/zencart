@@ -4,4 +4,4 @@
 //
 // Copyright (c) 2021-present, sms77 e.K.
 //
-const BOX_TOOLS_SMS77 = 'Sms77';
+const BOX_TOOLS_SMS77 = 'sms77';

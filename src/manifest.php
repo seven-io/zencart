@@ -6,8 +6,8 @@ return [
     'pluginAuthor' => 'sms77 e.K.',
     'pluginDescription' => 'Send SMS via Sms77.io.',
     'pluginGroups' => [],
-    'pluginId' => 0, // TODO: add
+    'pluginId' => 0, // TODO: add to plugin store to get ID
     'pluginName' => 'Sms77',
-    'pluginVersion' => 'v1.0.0',
+    'pluginVersion' => 'v1.1.0',
     'zcVersions' => ['v157'],
 ];
