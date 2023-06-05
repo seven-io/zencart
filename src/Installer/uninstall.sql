@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS sms77_sms;
+DROP TABLE IF EXISTS seven_sms;

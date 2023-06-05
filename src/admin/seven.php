@@ -1,14 +1,15 @@
 <?php
 // -----
-// Part of the "Sms77" plugin for Zen Cart v1.5.7 or later
+// Part of the "Seven" plugin for Zen Cart v1.5.7 or later
 //
-// Copyright (c) 2021-present, sms77 e.K.
+// Copyright (c) 2021-2022, sms77 e.K.
+// Copyright (c) 2023-present, seven communications GmbH & Co. KG
 //
 global $db;
 require 'includes/application_top.php';
 $messages = [];
 $apiKey = $db->Execute('SELECT configuration_value FROM ' . TABLE_CONFIGURATION
-    . ' WHERE configuration_key = "SMS77_API_KEY"')->fields['configuration_value'];
+    . ' WHERE configuration_key = "SEVEN_API_KEY"')->fields['configuration_value'];
 $hasApiKey = 0 !== strlen($apiKey);
 if (!$hasApiKey) {
     $messages[] = ['type' => 'warning', 'text' => MSG_MISSING_API_KEY];
@@ -76,7 +77,7 @@ if (!$hasApiKey) {
             }
 
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://gateway.sms77.io/api/sms');
+            curl_setopt($ch, CURLOPT_URL, 'https://gateway.seven.io/api/sms');
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -86,7 +87,7 @@ if (!$hasApiKey) {
             ]);
             $response = curl_exec($ch);
             curl_close($ch);
-            $sql = "INSERT INTO sms77_sms (config, response) VALUES (:config, :response);";
+            $sql = "INSERT INTO seven_sms (config, response) VALUES (:config, :response);";
             $sql = $db->bindVars($sql,
                 ':config', json_encode($_POST), 'string');
             $sql = $db->bindVars($sql,
@@ -113,7 +114,7 @@ if (!$hasApiKey) {
     <?php endforeach; ?>
 
     <?php if ($hasApiKey): ?>
-        <?php echo zen_draw_form('sms77_bulk_sms', FILENAME_SMS77,
+        <?php echo zen_draw_form('seven_bulk_sms', FILENAME_SEVEN,
             'action=bulk_sms', 'POST', 'class="form-horizontal"'); ?>
         <div class="form-group">
             <label class="col-sm-2 control-label"
@@ -137,7 +138,7 @@ if (!$hasApiKey) {
                 <input class="form-control" maxlength='16' id='from' name='from'
                        type="text"
                        value='<?php echo $db->Execute('SELECT configuration_value FROM '
-                           . TABLE_CONFIGURATION . ' WHERE configuration_key = "SMS77_FROM"')
+                           . TABLE_CONFIGURATION . ' WHERE configuration_key = "SEVEN_FROM"')
                            ->fields['configuration_value'] ?>'/>
             </div>
         </div>
@@ -265,7 +266,7 @@ if (!$hasApiKey) {
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($db->Execute('SELECT * FROM sms77_sms') as $sms): ?>
+        <?php foreach ($db->Execute('SELECT * FROM seven_sms') as $sms): ?>
             <tr>
                 <td><?php echo $sms['id'] ?></td>
                 <td><?php echo $sms['config'] ?></td>

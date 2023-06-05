@@ -17,6 +17,6 @@
 // | to obtain it through the world-wide-web, please send a note to       |
 // | license@zen-cart.com so we can mail you a copy immediately.          |
 // +----------------------------------------------------------------------+
-// $Id: sms77_filenames.php,v1.0 2021-03-26 lat9 $
+// $Id: seven_filenames.php,v1.0 2021-03-26 lat9 $
 //
-const FILENAME_SMS77 = 'sms77';
+const FILENAME_SEVEN = 'seven';
