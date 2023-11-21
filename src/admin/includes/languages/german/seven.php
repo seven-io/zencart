@@ -23,7 +23,6 @@ const HEADING_INPUT_LABEL = 'Label - bis 100 Zeichen bestehend aus a-z, A-Z, 0-9
 const HEADING_INPUT_FOREIGN_ID = 'Foreign ID - bis 64 Zeichen bestehend aus a-z, A-Z, 0-9, .-_@';
 const HEADING_INPUT_UDH = 'User Data Header';
 const HEADING_INPUT_DELAY = 'Versandzeitpunkt';
-const HEADING_INPUT_DEBUG = 'Debug';
 const HEADING_INPUT_NO_RELOAD = 'Duplikate erlauben';
 const HEADING_INPUT_FLASH = 'Flash';
 const HEADING_INPUT_UTF8 = 'UTF-8';

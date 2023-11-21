@@ -69,7 +69,7 @@ if (!$hasApiKey) {
                 'text' => $_POST['text'],
                 'to' => $to,
             ];
-            foreach (['debug', 'delay', 'no_reload', 'utf8', 'flash', 'udh', 'ttl',
+            foreach (['delay', 'no_reload', 'utf8', 'flash', 'udh', 'ttl',
                          'label', 'performance_tracking', 'foreign_id'] as $key) {
                 if (array_key_exists($key, $_POST)) {
                     $payload[$key] = $_POST[$key];
@@ -201,15 +201,6 @@ if (!$hasApiKey) {
                          <textarea maxlength='1520' class="form-control" id='text'
                                    name='text'
                                    required></textarea>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label"
-                   for='debug'><?php echo HEADING_INPUT_DEBUG ?></label>
-            <div class="col-sm-10">
-                <input id='debug' name='debug' type="checkbox"
-                       value='1'/>
             </div>
         </div>
 
