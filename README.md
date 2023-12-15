@@ -1,4 +1,4 @@
-![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
+<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
 
 # Official Module for Zen Cart v1.5.x
 
